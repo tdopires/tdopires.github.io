@@ -136,13 +136,13 @@ _:masterAlbum tds:name "Master of Puppets"@en ;
               tds:containsTrack [
                tds:name "Battery"@en ;
                tds:nOfSequenceInAlbum 1 ;
-               tds:hasMusicGenre _:heavyMetal
+               tds:hasMusicGenre _:heavyMetal ;
                tds:hasMusicGenre _:rock
               ] ;
               tds:containsTrack[
                tds:name "Master of Puppets"@en ;
                tds:nOfSequenceInAlbum 2 ;
-               tds:hasMusicGenre _:heavyMetal
+               tds:hasMusicGenre _:heavyMetal ;
                tds:hasMusicGenre _:rock
               ] .
 
