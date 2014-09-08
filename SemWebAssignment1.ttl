@@ -32,6 +32,10 @@ tds:hasMusicGenre rdfs:domain	tds:MusicSong ;
 <http://cso.org/> rdf:type tds:Orchestra ;
                            tds:name "Chicago Symphony Orchestra" ;
                            tds:foundedYear 1897 ;
+                           tds:nStringInstruments 23 ;
+                           tds:nBrassInstruments 24 ;
+                           tds:nWoodwindInstruments 23 ;
+                           tds:nPercussionInstruments 28 ;
                            tds:performsAt [
                             tds:name "Thursday B Series"@en ;
                             tds:dates "12/05/2013"@en ;
@@ -131,6 +135,7 @@ _:luluAlbum tds:name "Lulu"@en ;
              tds:hasMusicGenre _:noiseRock ;
              tds:hasMusicGenre _:avantGardeMetal
             ] .
+
 _:masterAlbum tds:name "Master of Puppets"@en ;
               tds:year 1986 ;
               tds:containsTrack [
@@ -146,7 +151,12 @@ _:masterAlbum tds:name "Master of Puppets"@en ;
                tds:hasMusicGenre _:rock
               ] .
 
-_:heavyMetal tds:name "Heavy Metal"@en .
+_:heavyMetal tds:name "Heavy Metal"@en ;
+             tds:relatesTo _:rock ;
+             tds:relatesTo _:avantGardeMetal .
+
 _:rock tds:name "Rock"@en .
-_:noiseRock tds:name "Noise Rock"@en .
+
+_:noiseRock tds:name "Noise Rock"@en ;
+              tds:relatesTo _:rock .
 _:avantGardeMetal tds:name "Avant-garde Metal"@en .
