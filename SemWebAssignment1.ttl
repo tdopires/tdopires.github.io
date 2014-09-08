@@ -28,6 +28,8 @@ tds:containsTrack rdfs:domain	tds:MusicAlbum ;
 tds:MusicGenre rdf:type rdfs:Class .
 tds:hasMusicGenre rdfs:domain	tds:MusicSong ;
                   rdfs:range	tds:MusicGenre .
+tds:relatesTo rdfs:domain	tds:MusicGenre ;
+              rdfs:range	tds:MusicGenre .
 
 <http://cso.org/> rdf:type tds:Orchestra ;
                            tds:name "Chicago Symphony Orchestra" ;
