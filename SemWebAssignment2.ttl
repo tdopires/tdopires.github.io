@@ -1,0 +1,164 @@
+@prefix tds:          <http://example.org/ontology/> .
+@prefix rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
+
+tds:MusicGroup rdf:type rdfs:Class .
+tds:MusicBand rdfs:subClassOf tds:MusicGroup .
+tds:Orchestra rdfs:subClassOf tds:MusicGroup .
+
+tds:Musician rdf:type rdfs:Class .
+tds:hasMembers  rdfs:domain	tds:MusicGroup ;
+                rdfs:range	tds:Musician .
+
+tds:Concert rdf:type rdfs:Class .
+tds:performsAt  rdfs:domain	tds:MusicGroup ;
+                rdfs:domain	tds:Musician ;
+                rdfs:range	tds:Concert .
+
+tds:MusicAlbum rdf:type rdfs:Class .
+tds:releases   rdfs:domain	tds:MusicGroup ;
+               rdfs:domain	tds:Musician ;
+               rdfs:range 	tds:MusicAlbum .
+
+tds:MusicSong rdf:type rdfs:Class .
+tds:containsTrack rdfs:domain	tds:MusicAlbum ;
+                  rdfs:range	tds:MusicSong .
+
+tds:MusicGenre rdf:type rdfs:Class .
+tds:hasMusicGenre rdfs:domain	tds:MusicSong ;
+                  rdfs:range	tds:MusicGenre .
+tds:relatesTo rdfs:domain	tds:MusicGenre ;
+              rdfs:range	tds:MusicGenre .
+
+<http://cso.org/> rdf:type tds:Orchestra ;
+                           tds:name "Chicago Symphony Orchestra" ;
+                           tds:foundedYear 1897 ;
+                           tds:nStringInstruments 23 ;
+                           tds:nBrassInstruments 24 ;
+                           tds:nWoodwindInstruments 23 ;
+                           tds:nPercussionInstruments 28 ;
+                           tds:performsAt [
+                            tds:name "Thursday B Series"@en ;
+                            tds:dates "12/05/2013"@en ;
+                            tds:location "Chicago, USA"@en
+                           ] .
+
+<http://swedishhousemafia.com> rdf:type tds:MusicGroup ;
+                               tds:name "Swedish House Mafia" ;
+                               tds:foundedYear 2008 ;
+                               tds:hasMembers [
+                                 tds:nickname "Axwell"@en ;
+                                 tds:name "Axel Christofer Hedfors"@en ;
+                                 tds:birthDate "18/12/1977"@en
+                               ] ;
+                               tds:hasMembers [
+                                 tds:nickname "Steve Angello"@en ;
+                                 tds:name "Steve Angello Josefsson Fragogiannis"@en ;
+                                 tds:birthDate "22/11/1982"@en
+                               ] ;
+                               tds:hasMembers [
+                                 tds:nickname "Sebastian Ingrosso"@en ;
+                                 tds:name "Sebastian Carmine Ingrosso"@en ;
+                                 tds:birthDate "20/04/1983"@en
+                               ] ;
+                               tds:performsAt [
+                                tds:name "Ultra Music Festival"@en ;
+                                tds:dates "2013"@en ;
+                                tds:location "Miami, USA"@en
+                               ] ;
+                               tds:releases _:untilNowAlbum .
+
+_:untilNowAlbum tds:name "Until Now"@en ;
+                tds:year 2012 ;
+                tds:containsTrack [
+                 tds:name "Greyhound"@en ;
+                 tds:nOfSequenceInAlbum 1 ;
+                 tds:hasMusicGenre _:houseMusic
+                ] ;
+                tds:containsTrack [
+                 tds:name "Antidote"@en ;
+                 tds:nOfSequenceInAlbum 4 ;
+                 tds:hasMusicGenre _:houseMusic
+                ] ;
+                tds:containsTrack [
+                 tds:name "Save the World"@en ;
+                 tds:nOfSequenceInAlbum 10 ;
+                 tds:hasMusicGenre _:houseMusic
+                ] .
+
+_:houseMusic tds:name "House Music"@en .
+
+<http://www.metallica.com/> rdf:type tds:MusicBand ;
+                            tds:name "Metallica" ;
+                            tds:performsAt <http://rockinrio.com/> ;
+                            tds:releases _:luluAlbum ;
+                            tds:releases _:masterAlbum ;
+                            tds:nOfMembers 4 ;
+                            tds:foundedYear 1981 ;
+                            tds:hasMembers [
+                              tds:nickname "James Hetfield"@en ;
+                              tds:name "James Alan Hetfield"@en ;
+                              tds:birthDate "03/08/1963"@en
+                            ] ;
+                            tds:hasMembers [
+                              tds:nickname "Lars Ulrich"@en ;
+                              tds:name "Lars Ulrich"@en ;
+                              tds:birthDate "26/12/1963"@en
+                            ] ;
+                            tds:hasMembers [
+                              tds:nickname "Kirk Hammett"@en ;
+                              tds:name "Kirk Lee Hammett"@en ;
+                              tds:birthDate "18/11/1962"@en
+                            ] ;
+                            tds:hasMembers [
+                              tds:nickname "Robert Trujillo"@en ;
+                              tds:name "Roberto Agustin Trujillo"@en ;
+                              tds:birthDate "23/10/1964"@en
+                            ] .
+
+
+<http://www.loureed.com/> rdf:type tds:Musician ;
+                          tds:nickname "Lou Reed"@en ;
+                          tds:name "Lewis Allan Reed"@en ;
+                          tds:birthDate "02/03/1942"@en ;
+                          tds:releases _:luluAlbum .
+
+_:luluAlbum tds:name "Lulu"@en ;
+            tds:year 2011 ;
+            tds:containsTrack [
+             tds:name "Brandenburg Gate"@en ;
+             tds:nOfSequenceInAlbum 1 ;
+             tds:hasMusicGenre _:rock
+            ] ;
+            tds:containsTrack [
+             tds:name "Frustration"@en ;
+             tds:nOfSequenceInAlbum 7 ;
+             tds:hasMusicGenre _:noiseRock ;
+             tds:hasMusicGenre _:avantGardeMetal
+            ] .
+
+_:masterAlbum tds:name "Master of Puppets"@en ;
+              tds:year 1986 ;
+              tds:containsTrack [
+               tds:name "Battery"@en ;
+               tds:nOfSequenceInAlbum 1 ;
+               tds:hasMusicGenre _:heavyMetal ;
+               tds:hasMusicGenre _:rock
+              ] ;
+              tds:containsTrack[
+               tds:name "Master of Puppets"@en ;
+               tds:nOfSequenceInAlbum 2 ;
+               tds:hasMusicGenre _:heavyMetal ;
+               tds:hasMusicGenre _:rock
+              ] .
+
+_:heavyMetal tds:name "Heavy Metal"@en ;
+             tds:relatesTo _:rock ;
+             tds:relatesTo _:avantGardeMetal .
+
+_:rock tds:name "Rock"@en .
+
+_:noiseRock tds:name "Noise Rock"@en ;
+              tds:relatesTo _:rock .
+_:avantGardeMetal tds:name "Avant-garde Metal"@en .
