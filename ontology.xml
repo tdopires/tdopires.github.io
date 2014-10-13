@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/alerossialvares/ontologies/2014/9/untitled-ontology-10"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/alerossialvares/ontologies/2014/9/untitled-ontology-10">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Import>http://xmlns.com/foaf/0.1/</Import>
+    <Declaration>
+        <Class IRI="http://purl.org/ontology/mo/Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontology/mo/MusicArtist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontology/mo/MusicGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontology/mo/MusicalManifestation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontology/mo/Record"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontology/mo/SoloMusicArtist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontology/mo/Track"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/biography"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/fanpage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/member"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/publisher"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/track"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI=":from_genre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI=":related"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI=":work_from_genre"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://purl.org/ontology/mo/record_number"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://purl.org/ontology/mo/track_count"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://purl.org/ontology/mo/track_number"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontology/mo/MusicArtist"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontology/mo/MusicGroup"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicArtist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontology/mo/MusicGroup"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontology/mo/Record"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicalManifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontology/mo/SoloMusicArtist"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicArtist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontology/mo/SoloMusicArtist"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontology/mo/Track"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicalManifestation"/>
+    </SubClassOf>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI=":related"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI=":related"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/biography"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicArtist"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/fanpage"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicArtist"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/member"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicGroup"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/publisher"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicalManifestation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/track"/>
+        <Class IRI="http://purl.org/ontology/mo/Record"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI=":from_genre"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicArtist"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI=":related"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicArtist"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI=":work_from_genre"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicalManifestation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/biography"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/fanpage"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/member"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/publisher"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://purl.org/ontology/mo/track"/>
+        <Class IRI="http://purl.org/ontology/mo/Track"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI=":from_genre"/>
+        <Class IRI="http://purl.org/ontology/mo/Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI=":related"/>
+        <Class IRI="http://purl.org/ontology/mo/MusicArtist"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI=":work_from_genre"/>
+        <Class IRI="http://purl.org/ontology/mo/Genre"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://purl.org/ontology/mo/record_number"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://purl.org/ontology/mo/track_number"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://purl.org/ontology/mo/record_number"/>
+        <Class IRI="http://purl.org/ontology/mo/Record"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://purl.org/ontology/mo/track_count"/>
+        <Class IRI="http://purl.org/ontology/mo/Record"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://purl.org/ontology/mo/track_number"/>
+        <Class IRI="http://purl.org/ontology/mo/Track"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://purl.org/ontology/mo/record_number"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://purl.org/ontology/mo/track_count"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://purl.org/ontology/mo/track_number"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/Genre</IRI>
+        <Literal datatypeIRI="&xsd;string">An expressive style of music. Any taxonomy can be plug-in here. You can either define a genre by yourself, like this: :mygenre a mo:Genre; dc:title &quot;electro rock&quot;. Or you can refer to a DBPedia genre (such as http://dbpedia.org/resource/Baroque_music), allowing semantic web clients to access easily really detailed structured information about the genre you are refering to.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/MusicArtist</IRI>
+        <Literal datatypeIRI="&xsd;string">A person or a group of people (or a computer :-) ), whose musical creative work shows sensitivity and imagination</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/MusicGroup</IRI>
+        <Literal datatypeIRI="&xsd;string">Group of musicians, or musical ensemble, usually popular or folk, playing parts of or improvising off of a musical arrangement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/MusicalManifestation</IRI>
+        <Literal datatypeIRI="&xsd;string">This entity is related to the edition/production/publication of a musical expression (musical manifestation are closely related with the music industry (their terms, concepts, definitions, methods (production, publication, etc.), etc.) From the FRBR final report: The entity defined as manifestation encompasses a wide range of materials, including manuscripts, books, periodicals, maps, posters, sound recordings, films, video recordings, CD-ROMs, multimedia kits, etc. As an entity, manifestation represents all the physical objects that bear the same characteristics, in respect to both intellectual content and physical form. Work #1 J. S. Bach&apos;s Six suites for unaccompanied cello * Expression #1 sound issued during the performance by Janos Starker recorded in 1963 and 1965 o Manifestation #1 recordings released on 33 1/3 rpm sound discs in 1965 by Mercury o Manifestation #2 recordings re-released on compact disc in 1991 by Mercury * Expression #2 sound issued during the performances by Yo-Yo Ma recorded in 1983 o Manifestation #1 recordings released on 33 1/3 rpm sound discs in 1983 by CBS Records o Manifestation #2 recordings re-released on compact disc in 1992 by CBS Records Changes that occur deliberately or even inadvertently in the production process that affect the copies result, strictly speaking, in a new manifestation. A manifestation resulting from such a change may be identified as a particular &quot;state&quot; or &quot;issue&quot; of the publication. Changes that occur to an individual copy after the production process is complete (e.g., the loss of a page, rebinding, etc.) are not considered to result in a new manifestation. That copy is simply considered to be an exemplar (or item) of the manifestation that deviates from the copy as produced. With the entity defined as manifestation we can describe the physical characteristics of a set of items and the characteristics associated with the production and distribution of that set of items that may be important factors in enabling users to choose a manifestation appropriate to their physical needs and constraints, and to identify and acquire a copy of that manifestation. Defining manifestation as an entity also enables us to draw relationships between specific manifestations of a work. We can use the relationships between manifestations to identify, for example, the specific publication that was used to create a microreproduction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/Record</IRI>
+        <Literal datatypeIRI="&xsd;string">A published record (manifestation which first aim is to render the product of a recording)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/SoloMusicArtist</IRI>
+        <Literal datatypeIRI="&xsd;string">Single person whose musical creative work shows sensitivity and imagination.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/Track</IRI>
+        <Literal datatypeIRI="&xsd;string">A track on a particular record</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/biography</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Used to link an artist to their online biography</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/fanpage</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Used to link an artist to a fan-created webpage devoted to that artist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/publisher</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Used to relate a musical manifestation to a person or a group of person who published it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/ontology/mo/record_number</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Has record number</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/track</IRI>
+        <Literal datatypeIRI="&xsd;string">Indicates a part of a musical manifestation - in this particular case, a track</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://purl.org/ontology/mo/track_count</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The track count of a record</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>:work_from_genre</IRI>
+        <Literal datatypeIRI="&xsd;string">Links a record or track to one or more genres</Literal>
+    </AnnotationAssertion>
+</Ontology>
